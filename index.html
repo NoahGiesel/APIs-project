@@ -11,25 +11,23 @@
 </head>
 <body>
     
-
+   <div class="header__section">
+         <h3>Welcome to a NASA's API</h3>
+         <p>
+         This is NASA's APOD! 
+         <br>
+        <i> The Astronomy Picture of the Day!</i> 
+   </div>
 
     <div class="landing__section">
-         <div class="left">   
-            <h3>Welcome to a NASA's API</h3>
-            <p>
-            This is NASA's APOD! 
-            <br>
-           <i> The Astronomy Picture of the Day!</i> 
-            </p>
-            <p id="title"></p>   
-         
+         <div class="left">  
+            <p id="title"></p>    
              <p id="description"></p>  
-             <h5 id="hdImage" onmouseover="hdImageOnHover()" onmouseout="normalImageOnLeave()">Hover me for HD image</h5>
-
-        </div>
+             <h5 id="hdImage" onmouseover="hdImageOnHover()" onmouseout="normalImageOnLeave()">Hover me for HD image</h5> 
+         </div>
+         
         <img class="img__section" id="landingImage">
-        <video src="" id="landingVDO"></video>
-     </div>
+      </div>
 
  
      <div class="divider__title">
@@ -78,19 +76,31 @@
             <p>Here you can insert the Longitude and Latitude of our earth to retrive the Landsat 8 image for the supplied location.
                Keep in mind that a valid range of latitude in degrees is -90 and +90 for the southern and northern hemisphere respectively,
                meanwhile longitude is in the range -180 and +180 specifying coordinates west and east of the Prime Meridian, respectively.
+               <br>
+               The cloud score is an optional calculation that returns the percentage of the queried image that is covered by clouds!
             </p>
             <div class="span">
                <p>Longitude: </p>
-               <input type="text" placeholder="Between -180 and +180">
+               <input id="longitude" type="text" placeholder="Between -180 and +180">
                <p>Latitude:</p>
-               <input type="text" placeholder="Between -90 and +90"id="">
-               <button>See result</button>
+               <input id="latitude" type="text" placeholder="Between -90 and +90">
+               <p class="cloudForCSS">Cloud: <input id="cloud" type="checkbox"></p>
+               
+               <button onclick="checked()">See result</button>
             </div>
         </div>
-         <div class="right"></div>
+         <div class="right">
+            <img id="earth__image" src="" alt="">
+            <p id="date__earth"></p>
+            <p id="planet__earth"></p>
+            <p id="cloud_percentage"></p>
+         </div>
      </div>
 
+<footer> 
 
+   <h4>Noah Giesel API &copy;</h4>
+</footer>
 
 <script src="https://code.jquery.com/jquery-3.4.1.js" integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU=" crossorigin="anonymous"></script>
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>

@@ -1,12 +1,12 @@
 @import url('https://fonts.googleapis.com/css?family=Muli:600&display=swap');
 
+ * { 
+     margin: 0;
+     padding: 0;
+ }
 
-*{
-    margin: 0;
-    padding: 0;
-}
 
-
+ 
 html , body {
     height: 100%;
     width: 100%;
@@ -14,32 +14,14 @@ html , body {
     margin: 0;
     padding: 0;
     font-family: 'Muli', sans-serif;
+    overflow-x: hidden
  
 }
  
- 
-
-.landing__section  { 
-    width: 100%;
-    height: auto; 
-    display: grid;
-    grid-template-rows: auto auto;
-    grid-gap: 20px;
-    margin-bottom: 50px;
-}
-
-
-.img__section {
-    width: 100%;  
-}
-
-.landing__section h5 { 
-    display: inline-block;
-    cursor: cell;
-
-}
-
-.landing__section .left h3 { 
+ .header__section {
+     width: 100%;
+ }
+ .header__section h3 { 
     text-align: center;
     font-size: 21px;
     text-transform: uppercase;
@@ -47,6 +29,35 @@ html , body {
     margin: 35px 0;
     font-weight: bold;
 }
+
+.header__section p {
+    text-align: center;  
+    margin: 20px;
+    color: #fff;
+}
+
+.landing__section  { 
+    width: 100%;
+    height: auto; 
+    display: grid;
+    grid-template-rows: auto auto;
+    grid-template-columns: none;
+    grid-gap: 20px;
+    margin-bottom: 50px;
+}
+
+
+.img__section {
+    width: 80%;  
+    margin: 0 auto;
+}
+
+.landing__section h5 { 
+    display: inline-block;
+    cursor: cell;
+
+}
+  
 
 .landing__section .left p {
     text-align: center;  
@@ -112,7 +123,7 @@ html , body {
 }
 
 .textSection p a {  
-     color: #fff;
+     color: rgba(255, 255, 255, 0.383);
      text-decoration: underline;
      font-weight: bold;
 }
@@ -124,6 +135,8 @@ html , body {
 #mars_first,
 #mars_second { 
     width: 100%;
+    border-radius: 20px;
+    border: 1px solid #fff;
 }
 
 
@@ -140,6 +153,12 @@ html , body {
     text-align: center;
     width: 100%;
 }
+
+ #cloud {
+     width: auto;
+     height: auto;
+     margin-left: 20px;
+ }
 
 .earth__section {
     width: 100%;
@@ -181,3 +200,140 @@ html , body {
      font-size: 14px;
      margin: 20px;
 }
+.earth__section .right p { 
+     color: #fff;
+     font-size: 17px;
+}
+.earth__section .right img { 
+     width: 100%;
+     margin: 20px 0;
+}
+
+footer {
+     height: 40vh;
+     background-color: rgb(47, 47, 47);
+     text-align: center;
+     position: relative;
+}
+
+footer h4 { 
+    width: 100%;
+    color: #fff;
+    font-size: 24px;
+    position: absolute;
+    left: 50%;
+    bottom: 10%;
+    transform: translate(-50%,-50%)
+}
+
+
+
+@media screen and (min-width: 1250px) {
+
+    .landing__section  { 
+        width: 100%; 
+        display: grid; 
+        grid-template-columns: 50% 50%;
+        grid-gap: 20px; 
+        margin: 20px 0;
+    }
+    .landing__section .left h5 {
+        display: block; 
+        width: 80%;  
+        margin: 25px auto ;
+    }
+    .divider__title {
+        border:  1px solid rgb(87, 87, 87);
+    }
+
+    .mars__section {
+        width: 100%;
+        display: grid;
+        grid-template-columns: auto auto;
+        grid-template-rows: none;
+        grid-gap: 20px;
+    }
+    
+    .mars__section .left { 
+        border-radius: 20px;
+        display: grid;
+        grid-template-rows: auto auto;
+        grid-gap: 20px;
+        color: #fff;
+        margin-top: -15px;
+        overflow: hidden;
+    }
+    #mars_first,
+    #mars_second { 
+    width: 80%;
+    margin: 0 auto; 
+}    
+
+.mars__section p{ 
+    text-align: center;
+}
+
+.textSection { 
+    width: 70%;
+    margin: 30px auto;
+}
+
+
+
+
+
+
+    
+.earth__section {
+    width:75%;
+    height: auto;
+    display: grid;
+    grid-template-rows: none;
+    grid-template-columns: 50% 50%;
+    grid-gap: 20px;
+    margin: 40px auto;
+}
+
+
+
+
+.earth__section .left p{ 
+    text-align: justify;
+    color: #fff;
+    margin: 0 auto; 
+}
+
+
+.earth__section .left .span{ 
+    background-color: aliceblue;
+    width: 100%;
+    padding: 20px;
+    margin: 50px auto;
+    text-align: center;
+    border-radius: 6px;
+}
+
+
+#cloud {
+    width: auto;
+    height: auto;
+    margin-left: 110px;
+}
+
+.earth__section .right p { 
+    color: #fff;
+    font-size: 17px;
+    text-align: center;
+}
+.earth__section .right img { 
+    width:90%;
+    display: inline-block;
+    margin: 20px auto; 
+    border-radius: 15px;
+
+}
+
+
+
+
+} 
