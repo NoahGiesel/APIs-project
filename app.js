@@ -1,12 +1,29 @@
 var apiRequest = new XMLHttpRequest();
 var apiRequest2 = new XMLHttpRequest();
 
+const mars_first = document.querySelector('#mars_first')
+const mars_first_h5 = document.querySelector('#mars_first_h5')
+const mars_first_p = document.querySelector('#mars_first_p')
+const mars_first_p2 = document.querySelector('#mars_first_p2')
+const mars_first_status = document.querySelector('#mars_first_status')
+const mars_second = document.querySelector('#mars_second')
+const mars_second_h5 = document.querySelector('#mars_second_h5')
+const mars_second_p = document.querySelector('#mars_second_p')
+const mars_second_p2= document.querySelector('#mars_second_p2')
+const mars_second_status= document.querySelector('#mars_second_status')
+
+
+
+
+
+
 const title = document.querySelector('#title')
 const landingIMG = document.querySelector('#landingImage')
+const landingVDO = document.querySelector('#landingVDO')
 const hdimage = document.querySelector('#hdImage')
 const description = document.querySelector('#description')
 var thisIsTheHDImage;
-var thisIsTheNORMALImage;
+ var thisIsTheNORMALImage;
 
 apiRequest.open('GET', 'https://api.nasa.gov/planetary/apod?api_key=H3LLqaHsYFliawvkIED0tmeqfMxcR6ISjTw79is1')
 
@@ -19,7 +36,9 @@ apiRequest.onload = function () {
         description.innerHTML =data.explanation;
         landingIMG.src = data.url;
         thisIsTheNORMALImage = data.url;
-        thisIsTheHDImage = data.hdurl;
+         thisIsTheHDImage = data.hdurl;
+         landingVDO.src = data.url; 
+
          
       } else {
         console.log('error')
@@ -42,38 +61,26 @@ function normalImageOnLeave() {
 
 
 
-
-
-//carousel iniz
-
-$(function() {
-    $('#myCarousel').carousel();
-});
-
-
-//carousel selector 
-
-const carousel_img0 = document.querySelector('#carousel_img0')
-const carousel_img1 = document.querySelector('#carousel_img1')
-const carousel_img2 = document.querySelector('#carousel_img2')
-const carousel_img3 = document.querySelector('#carousel_img3')
-const carousel_img4 = document.querySelector('#carousel_img4')
-
- 
- var array = [];
+  
 
 apiRequest2.open('GET', 'https://api.nasa.gov/mars-photos/api/v1/rovers/curiosity/photos?sol=1000&api_key=H3LLqaHsYFliawvkIED0tmeqfMxcR6ISjTw79is1')
 
 apiRequest2.onload = function () {
-    
     var data = JSON.parse(this.response)
 
     if (apiRequest2.status >= 200 && apiRequest2.status < 400) {
-        for ( var i = 0 ; i< 500 ; i += 100) 
-        var variabile = array[i] 
-        console.log(variabile)
-        variabile.src = data.photos[i].img_src; 
          
+      mars_first.src = data.photos[0].img_src;
+      mars_first_p.innerHTML =   "launch date: "+data.photos[0].rover.launch_date;
+      mars_first_p2.innerHTML =   "landing date: " + data.photos[0].rover.landing_date; 
+      mars_first_status.innerHTML =   "status : " + data.photos[0].rover.status;
+      
+      
+      mars_second.src = data.photos[785].img_src;
+      mars_second_p.innerHTML =   "launch date: "+data.photos[785].rover.launch_date;
+      mars_second_p2.innerHTML =   "landing date: " + data.photos[785].rover.landing_date; 
+      mars_second_status.innerHTML =   "status : " + data.photos[785].rover.status; 
+             
       } else {
         console.log('error')
       }
@@ -81,4 +88,6 @@ apiRequest2.onload = function () {
 
 }
 
+
 apiRequest2.send();
+

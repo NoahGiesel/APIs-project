@@ -79,10 +79,105 @@ html , body {
     grid-gap: 20px;
 }
 
-.mars__section .left .carousel img{ 
+.mars__section .left { 
     border-radius: 20px;
+    display: grid;
+    grid-template-rows: auto auto;
+    grid-gap: 20px;
+    color: #fff;
 }
 
-.carousel-indicators .active{
-    background-color: #222;
+.mars__section .second { 
+    border-radius: 20px;
+    display: grid;
+    grid-template-rows: auto auto;
+    grid-gap: 20px;
+    color: #fff;
+}
+
+
+.textSection { 
+    width: 95%;
+    margin: 0 auto;
+}
+
+.textSection h4 {  
+    text-align: left;
+    font-size: 25px;
+    color: #fff;
+}
+.textSection p {  
+    text-align: justify;
+    color: #fff;
+}
+
+.textSection p a {  
+     color: #fff;
+     text-decoration: underline;
+     font-weight: bold;
+}
+
+ #landingVDO {
+     width: 100%;
+     z-index: 1;
+ }
+#mars_first,
+#mars_second { 
+    width: 100%;
+}
+
+
+.divider__title {
+    margin: 20px 0;
+    width: 100%;
+    background-color: rgb(47, 47, 47);
+}
+
+.divider__title h4 {
+    padding: 10px 0;
+    color: #fff;
+    font-size: 25px;
+    text-align: center;
+    width: 100%;
+}
+
+.earth__section {
+    width: 100%;
+    height: auto;
+    display: grid;
+    grid-template-rows: auto auto;
+    grid-gap: 10px;
+}
+
+.earth__section .left p{ 
+    text-align: justify;
+    color: #fff;
+    margin: 0 auto;
+    width: 95%;
+}
+
+.earth__section .left .span{ 
+    background-color: aliceblue;
+    width: 80%;
+    padding: 20px;
+    margin: 30px auto;
+    text-align: center;
+    border-radius: 6px;
+}
+.earth__section .left .span p{ 
+    color: #444;
+    font-weight: bold;
+    margin: 10px 0;
+    font-size: 17px;
+}
+.earth__section .left .span input{ 
+     height: 6vh;
+     border-radius: 6px;
+}
+.earth__section .left .span button{ 
+     padding: 5px 18px;
+     text-transform: uppercase;
+     border-radius: 6px;
+     font-size: 14px;
+     margin: 20px;
 }
