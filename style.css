@@ -136,7 +136,7 @@ html , body {
 #mars_second { 
     width: 100%;
     border-radius: 20px;
-    border: 1px solid #fff;
+    border: 1px solid rgb(175, 175, 175);
 }
 
 
